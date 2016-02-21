@@ -1,0 +1,17 @@
+<!-- <ion-view view-title="Detail for {{good.productCode}} - {{good.description}}"> -->
+<ion-view view-title="{{description}} - {{productCode}}">
+  <ion-content>
+            <ion-list>
+              <ion-item><img class="photo-detail" ng-src="{{endpoint.imgUrl ++ product.imageUrl}}"/></ion-item>
+              <ion-item>Code <span class="badge badge-stable">{{product.productCode}}</span></ion-item>
+              <ion-item>Description <span class="badge badge-stable">{{product.description}}</span></ion-item>
+              <ion-item>Quantity In Stock <span class="badge badge-stable">{{product.quantityInStock}}</span></ion-item>
+              <ion-item>Unit price <span class="badge badge-stable">{{product.unitPrice}}</span></ion-item>
+              <ion-item><button class="button button-block button-positive">Button</button></ion-item>
+            </ion-list>
+  </ion-content>
+
+  <ion-footer-bar class="bar-dark">
+    <h1 class="title"></h1>
+  </ion-footer-bar>
+</ion-view>

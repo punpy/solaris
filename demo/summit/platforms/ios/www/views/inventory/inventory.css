@@ -1,0 +1,62 @@
+.item .price {
+  font-weight: bold;
+  font-size: 15px;
+  color: #fff;
+  position: relative;
+  /*background: #666;*/
+  right: 15px;
+  height: 60px;
+  top: 30px;
+  width: 80px;
+  text-align: center;
+  padding: 6px;
+  line-height: 1.2em;
+}
+.item .price.positive {
+  /*background: #66cc33;*/
+  color: #66cc33;
+}
+.item .price.negative {
+  /*background: #ef4e3a;*/
+  color: #ef4e3a;
+}
+
+.desc {
+  font-weight: bold;
+  font-size: 14px;
+  position: relative;
+  left: 10px;
+  top: 10px;
+  width:100px;
+  /*align: left;*/
+  height:50px;
+  text-align: center;
+  padding: 6px;
+  line-height: 1.2em;
+}
+.photo {
+  width: 100%;
+  /*width:50%;*/
+  /*align: left;*/
+  /*height:20px;*/
+  margin:auto;
+  display:block;
+}
+
+.photo-detail {
+  width: 80%;
+  position: relative;
+  /*width:50%;*/
+  /*height: 90%;*/
+  /*align: left;*/
+  /*height:20px;*/
+  /*left: 20px;
+  top: 20px;*/
+  width: 400px;
+  margin:auto;
+  /*padding-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;*/
+  padding: 20px;
+  display:block;
+}

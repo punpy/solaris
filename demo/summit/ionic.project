@@ -1,0 +1,26 @@
+{
+  "name": "summit16",
+  "app_id": "27fa0870",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://summit-goodies.au.cloudhub.io/api"
+    },
+    {
+      "path": "/util",
+      "proxyUrl": "http://summit-util.au.cloudhub.io/api"
+    },
+    {
+      "path": "/content",
+      "proxyUrl": "http://ec2-52-62-17-219.ap-southeast-2.compute.amazonaws.com/summit/resources/content"
+    },
+    {
+      "path": "/mule-resource",
+      "proxyUrl": "http://localhost:8081/summit/mule-resource"
+    },
+    {
+      "path": "/ajax",
+      "proxyUrl": "http://localhost:8081/ajax"
+    }
+  ]
+}

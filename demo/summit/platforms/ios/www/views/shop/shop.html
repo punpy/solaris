@@ -1,0 +1,49 @@
+<ion-view view-title="Welcome to MuleSoft's Forum 2016" id="shop-view">
+  <h1></h1>
+  <ion-nav-buttons side="left">
+    <!-- <button class="button button-positive no-animation"
+            ng-click="startApp()" ng-show="!slideIndex">
+      Start
+    </button> -->
+    <button class="button button-positive no-animation"
+            ng-click="previous()" ng-show="slideIndex > 0">
+      Previous
+    </button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button button-positive no-animation"
+            ng-click="next()" ng-show="slideIndex < maxPage">
+      Next
+    </button>
+    <!-- <button class="button button-positive no-animation"
+            ng-click="startApp()" ng-show="slideIndex == 2">
+      Start using MyApp
+    </button> -->
+  </ion-nav-buttons>
+  <ion-slide-box on-slide-changed="slideChanged(index)">
+  <!-- <ion-slide-box  show-pager="true" on-slide-changed="slideChanged(index)"> -->
+    <ion-slide ng-repeat="good in goods">
+      <h3>{{good.description}}</h3>
+      <div id="logo">
+        <!-- <img src="http://code.ionicframework.com/assets/img/app_icon.png"> -->
+        <img class="image-slide" ng-src="{{endpoint.imgUrl ++ good.imageUrl}}" >
+      </div>
+
+      <h3>Qty : {{good.quantityInStock}}</h3>
+
+
+    </ion-slide>
+  </ion-slide-box>
+
+  <!-- <ion-slide-box show-pager="true" on-slide-changed="slideChanged(index)">
+    <ion-slide ng-repeat="good in goods" >
+      <img class="image-slide" ng-src="{{endpoint.imgUrl ++ good.imageUrl}}" >
+      <!-- <h3>good.description</h3> -->
+    </ion-slide>
+  </ion-slide-box>
+
+
+
+
+
+</ion-view>

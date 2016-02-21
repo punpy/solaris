@@ -1,0 +1,37 @@
+<ion-view view-title="Shop" id="shop-view" hide-back-button="true">
+
+  <ion-nav-buttons side="left">
+    <!-- <button class="button button-positive no-animation"
+            ng-click="startApp()" ng-show="!slideIndex">
+      Start
+    </button> -->
+    <button class="button button-positive no-animation"
+            ng-click="previous()" ng-show="slideIndex > 0 && goods.length >0">
+      Previous
+    </button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button button-positive no-animation"
+            ng-click="next()" ng-show="slideIndex < maxPage && goods.length > 0">
+      Next
+    </button>
+  </ion-nav-buttons>
+  <!-- <ion-slide-box show-pager="true" on-slide-changed="slideChanged(index)"> -->
+  <ion-slide-box show-pager="true" pager-click="changePage(index)" on-slide-changed="slideChanged(index)">
+  <!-- <ion-slide-box show-pager="true" pager-click="changePage(index)" on-slide-changed="slideChanged(index)"> -->
+    <ion-slide ng-repeat="good in goods"  >
+    <!-- <ion-slide show-pager="true" > -->
+      <div></div>
+      <div>
+        <h3>{{good.description}}</h3>
+      </div>
+      <div id="logo">
+        <img class="photo-slide" ng-src="{{good.imageUrl}}" ui-sref="tabs.order_slide({productCode: good.productCode, description: good.description})">
+      </div>
+      <div>
+        <h3>Qty : {{good.quantityInStock}}</h3>
+      </div>
+    </ion-slide>
+  </ion-slide-box>
+
+</ion-view>

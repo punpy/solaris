@@ -1,0 +1,35 @@
+<ion-view view-title="Check Order" hide-back-button="true">
+  <ion-content>
+
+    <ion-list>
+      <ion-item></ion-item>
+      <ion-item>
+        <form name="orderForm" novalidate="" >
+          <label class="item item-input" ng-class="{ 'has-errors' : orderForm.emailAddress.$invalid && orderForm.emailAddress.$dirty, 'no-errors' : orderForm.emailAddress.$valid}">
+            <span class="input-label">eMail Address</span>
+            <input type="email" name="emailAddress" ng-model="data.emailAddress" required />
+          </label>
+          <button class="button button-full button-positive" ng-click="getOrder(data)" ng-disabled="orderForm.$invalid" type="submit">
+          Enquire Order
+          </button>
+        </form>
+      </ion-item>
+
+      <ion-item>
+          <div class="list" >
+            <div class="item" >
+              {{orderIdMsg}}<br/>
+            </div>
+            <!-- <div class="item" ng-hide="orderId.$valid" >
+              Failed to place order : {{message ++ ' : ' ++ code}}
+            </div> -->
+            <div class="item"  >
+              <ion-item><img class="photo-detail" ng-src="{{qrcode}}"/></ion-item>
+            </div>
+          </div>
+        </ion-item>
+
+    </ion-list>
+
+  </ion-content>
+</ion-view>
