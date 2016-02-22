@@ -1,15 +1,26 @@
-<ion-view view-title="Catalog" hide-back-button="true">
+<ion-view view-title="{{title}}" hide-back-button="true">
   <!-- <ion-nav-buttons side="primary">
     <button class="button" ng-click="openHelp($event)">About</button>
   </ion-nav-buttons> -->
   <ion-content>
     <ion-refresher on-refresh="load()" pulling-text="Pull to Refresh"></ion-refresher>
+
+      <div class="item" ng-show="true && false" >
+        1. ng-hide=good.$invalid
+      </div>
+      <div class="item" ng-show="true && 10>100" >
+        2. ng-show="good.$invalid"
+      </div>
+
     <ion-list>
       <ion-item ng-repeat="good in goods" ui-sref="tabs.order({productCode: good.productCode, description: good.description})" >
         <div class="row">
-        <div class="col-25 "><img class="photo" ng-src="{{endpoint.imgUrl ++ good.imageUrl}}"/></div>
-        <div class="col-60 desc">{{good.productCode}} - {{good.description}}</div>
-        <div class="col-20 col-offset-50">
+        <!-- <div class="col-25 "><img class="photo" ng-src="{{endpoint.imgUrl ++ good.imageUrl}}"/></div> -->
+        <div class="col col-20"><img class="small-photo" ng-src="{{imageBase ++ good.imageUrl}}"/></div>
+        <!-- <h1>image : {{good.imageUrl}}</h1> -->
+        <!-- <div class="col-25 "><img class="photo" ng-src="{{getUrl(good.imageUrl)}}"/></div> -->
+        <div class="col col-70 item-text-wrap myDesc">{{good.productCode}} - {{good.description}}</div>
+        <div class="col col-10 myQuantity">
           <span class="price negative" ng-if="good.quantityInStock <= 0">{{good.quantityInStock}}
             <!-- {{good.quantity}}<br /><span class="icon ion-arrow-down-b"></span> {{good.quantity | number:2}} -->
           </span>

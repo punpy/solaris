@@ -1,24 +1,40 @@
-angular.module('App', ['ionic', 'highcharts-ng'])
-.constant('Endpoint', {
-  apiUrl: 'http://192.168.1.166:8100/api',
-  imgUrl: 'http://ec2-52-62-17-219.ap-southeast-2.compute.amazonaws.com/summit/resources'
-})
-.config(function ($stateProvider, $urlRouterProvider) {
+angular.module('App', ['ionic', 'highcharts-ng', 'ngAnimate'])
+// .constant('Endpoint', {
+//   apiUrl: 'http://192.168.2.26:8100/api',
+//   // apiUrl: 'http://192.168.1.166:8100/api',
+//   imgUrl: 'http://ec2-52-62-17-219.ap-southeast-2.compute.amazonaws.com/summit/resources',
+//   ajaxUrl: 'http://192.168.2.26:8090/services/salesforce/mule-resource'
+// })
+.constant( 'Config', {
+    'EventId': {
+      Auckland: '0019000001dkTvN',
+      Melbourne: '0019000001dkTxm',
+      Sydney: '0019000001dkTw5',
+      Singapore: '0019000001dkTxw',
+      HongKong: '0019000001dkTyX'
+    },
 
+    'defaultTitle'    : 'MuleSoft Summit - Auckland',
+    'defaultEventId' : '0019000001dkTvN',
+    // 'defaultHost' : ' http://ec2-52-62-188-164.ap-southeast-2.compute.amazonaws.com:9100',
+
+    'urls' : {
+      'imageUrl': 'http://ec2-52-62-17-219.ap-southeast-2.compute.amazonaws.com/summit/resources',
+      'qrUrl' : 'http://summit-util.au.cloudhub.io/api/qr-code?data=https://ap1.salesforce.com/',
+      'getOrder' : 'http://summit-goodies.au.cloudhub.io/api/orders/',
+      'queryProducts' : 'http://summit-goodies.au.cloudhub.io/api/products',
+      // 'whiteQrCode' : '/img/white-qr-code.png',
+      'placeOrders' : 'http://summit-goodies.au.cloudhub.io/api/orders'
+    }
+  }
+)
+.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+  $ionicConfigProvider.tabs.position('bottom');
   $stateProvider
     .state('tabs', {
       url: '/tabs',
       abstract: true,
       templateUrl: 'views/tabs/tabs.html'
-    })
-    .state('tabs.shop', {
-      url: '/shop',
-      views: {
-        'shop-tab': {
-          templateUrl: 'views/shop/shop.html',
-          controller: 'ShopController'
-        }
-      }
     })
     .state('tabs.inventory', {
       url: '/inventory',
@@ -29,26 +45,53 @@ angular.module('App', ['ionic', 'highcharts-ng'])
         }
       }
     })
+    .state('tabs.shop', {
+      url: '/shop',
+      views: {
+        'shop-tab': {
+          templateUrl: 'views/shop/shop.html',
+          controller: 'ShopController'
+        }
+      }
+    })
+    .state('tabs.stock', {
+      url: '/stock',
+      views: {
+        'stock-tab': {
+          templateUrl: 'views/stock/stock.html',
+          controller: 'StockController'
+        }
+      }
+    })
+    .state('tabs.enquiry', {
+      url: '/enquiry',
+      views: {
+        'enquiry-tab': {
+          templateUrl: 'views/enquiry/enquiry.html',
+          controller: 'EnquiryController'
+        }
+      }
+    })
     .state('tabs.order', {
       url: '/order?:productCode&:description',
       views: {
-        'order-tab': {
+        'inventory-tab': {
           templateUrl: 'views/order/order.html',
           controller: 'OrderController'
         }
       }
     })
-    .state('tabs.analysis', {
-      url: '/analysis',
+    .state('tabs.order_slide', {
+      url: '/order_slide?:productCode&:description',
       views: {
-        'analysis-tab': {
-          templateUrl: 'views/analysis/analysis.html',
-          controller: 'AnalysisController'
+        'shop-tab': {
+          templateUrl: 'views/order/order.html',
+          controller: 'OrderSlideController'
         }
       }
     });
 
-  $urlRouterProvider.otherwise('/tabs/shop');
+  $urlRouterProvider.otherwise('/tabs/inventory');
 })
 
 .run(function($ionicPlatform) {
@@ -86,27 +129,27 @@ angular.module('App', ['ionic', 'highcharts-ng'])
 			return products;
 		}
 	}
-})
-.factory('Currencies', function () {
-  return [
-    { code: 'AUD', text: 'Australian Dollar', selected: true },
-    { code: 'BRL', text: 'Brazilian Real', selected: false },
-    { code: 'CAD', text: 'Canadian Dollar', selected: true },
-    { code: 'CHF', text: 'Swiss Franc', selected: false },
-    { code: 'CNY', text: 'Chinese Yuan', selected: true},
-    { code: 'EUR', text: 'Euro', selected: true },
-    { code: 'GBP', text: 'British Pound Sterling', selected: true },
-    { code: 'IDR', text: 'Indonesian Rupiah', selected: false },
-    { code: 'ILS', text: 'Israeli New Sheqel', selected: false },
-    { code: 'MXN', text: 'Mexican Peso', selected: true },
-    { code: 'NOK', text: 'Norwegian Krone', selected: false },
-    { code: 'NZD', text: 'New Zealand Dollar', selected: false },
-    { code: 'PLN', text: 'Polish Zloty', selected: false },
-    { code: 'RON', text: 'Romanian Leu', selected: false },
-    { code: 'RUB', text: 'Russian Ruble', selected: true },
-    { code: 'SEK', text: 'Swedish Krona', selected: false },
-    { code: 'SGD', text: 'Singapore Dollar', selected: false },
-    { code: 'USD', text: 'United States Dollar', selected: true },
-    { code: 'ZAR', text: 'South African Rand', selected: false }
-  ];
 });
+// .factory('Currencies', function () {
+//   return [
+//     { code: 'AUD', text: 'Australian Dollar', selected: true },
+//     { code: 'BRL', text: 'Brazilian Real', selected: false },
+//     { code: 'CAD', text: 'Canadian Dollar', selected: true },
+//     { code: 'CHF', text: 'Swiss Franc', selected: false },
+//     { code: 'CNY', text: 'Chinese Yuan', selected: true},
+//     { code: 'EUR', text: 'Euro', selected: true },
+//     { code: 'GBP', text: 'British Pound Sterling', selected: true },
+//     { code: 'IDR', text: 'Indonesian Rupiah', selected: false },
+//     { code: 'ILS', text: 'Israeli New Sheqel', selected: false },
+//     { code: 'MXN', text: 'Mexican Peso', selected: true },
+//     { code: 'NOK', text: 'Norwegian Krone', selected: false },
+//     { code: 'NZD', text: 'New Zealand Dollar', selected: false },
+//     { code: 'PLN', text: 'Polish Zloty', selected: false },
+//     { code: 'RON', text: 'Romanian Leu', selected: false },
+//     { code: 'RUB', text: 'Russian Ruble', selected: true },
+//     { code: 'SEK', text: 'Swedish Krona', selected: false },
+//     { code: 'SGD', text: 'Singapore Dollar', selected: false },
+//     { code: 'USD', text: 'United States Dollar', selected: true },
+//     { code: 'ZAR', text: 'South African Rand', selected: false }
+//   ];
+// });

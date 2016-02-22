@@ -12,7 +12,8 @@ angular.module('App')
   //     return ".."+url;
   // }
 
-
+  $scope.imageBase = Config.urls.imageUrl;
+  
   $scope.load = function () {
     // $http.get($scope.endpoint.apiUrl+ '/products').success(function (products) {
     $http.get(Config.urls.queryProducts).success(function (products) {

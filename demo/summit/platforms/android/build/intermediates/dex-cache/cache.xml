@@ -2,11 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/Users/samuel/gitprojects/solaris/demo/forum16-1/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/jars/classes.jar"
+        jar="/Users/samuel/gitprojects/solaris/demo/summit/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="b2f78c0eee81bf81e481c8f6059c70525668ec60">
-        <dex dex="/Users/samuel/gitprojects/solaris/demo/forum16-1/platforms/android/build/intermediates/pre-dexed/debug/CordovaLib-unspecified-debug_1a8f45f46f35bbbd5645bc466161f63c877385c9.jar" />
+        sha1="183ea72798f9b454e255803db868cbe7829b3730">
+        <dex dex="/Users/samuel/gitprojects/solaris/demo/summit/platforms/android/build/intermediates/pre-dexed/debug/CordovaLib-unspecified-debug_2741e9e81be9039e17a0161093d1598d06068b04.jar" />
     </item>
 
 </items>

@@ -26,7 +26,7 @@
         <h3>{{good.description}}</h3>
       </div>
       <div id="logo">
-        <img class="photo-slide" ng-src="{{good.imageUrl}}" ui-sref="tabs.order_slide({productCode: good.productCode, description: good.description})">
+        <img class="photo-slide" ng-src="{{imageBase ++ good.imageUrl}}" ui-sref="tabs.order_slide({productCode: good.productCode, description: good.description})">
       </div>
       <div>
         <h3>Qty : {{good.quantityInStock}}</h3>

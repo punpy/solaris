@@ -5,6 +5,8 @@ angular.module('App')
   $scope.slideIndex=0;
   // $scope.goods=[];
   // $scope.currencies = Currencies;
+  $scope.imageBase = Config.urls.imageUrl;
+  
   $scope.load = function () {
 
     $http.get(Config.urls.queryProducts).success(function (products) {

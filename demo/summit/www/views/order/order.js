@@ -3,6 +3,7 @@ angular.module('App')
   $scope.description = $stateParams.description;
   $scope.productCode = $stateParams.productCode;
 
+  $scope.imageBase = Config.urls.imageUrl;
   $scope.order = function(data1) {
     // alert("calling order: "+ data1.firstName);
     // console.log("calling order: "+ data1.LastName);

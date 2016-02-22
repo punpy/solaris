@@ -14,15 +14,17 @@ angular.module('App', ['ionic', 'highcharts-ng', 'ngAnimate'])
       HongKong: '0019000001dkTyX'
     },
 
-    'defaultTitle'    : 'MuleSoft Summit - Hong Kong',
-    'defaultEventId' : '0019000001dkTyX',
+    'defaultTitle'    : 'MuleSoft Summit - Auckland',
+    'defaultEventId' : '0019000001dkTvN',
+    // 'defaultHost' : ' http://ec2-52-62-188-164.ap-southeast-2.compute.amazonaws.com:9100',
 
     'urls' : {
-      'qrUrl' : '/util/qr-code?data=https://ap1.salesforce.com/',
-      'getOrder' : '/api/orders/',
-      'queryProducts' : '/api/products',
-      'placeOrders' : '/api/orders',
-      'whiteQrCode' : '/img/white-qr-code.png'
+      'imageUrl': 'http://ec2-52-62-17-219.ap-southeast-2.compute.amazonaws.com/summit/resources',
+      'qrUrl' : 'http://summit-util.au.cloudhub.io/api/qr-code?data=https://ap1.salesforce.com/',
+      'getOrder' : 'http://summit-goodies.au.cloudhub.io/api/orders/',
+      'queryProducts' : 'http://summit-goodies.au.cloudhub.io/api/products',
+      // 'whiteQrCode' : '/img/white-qr-code.png',
+      'placeOrders' : 'http://summit-goodies.au.cloudhub.io/api/orders'
     }
   }
 )

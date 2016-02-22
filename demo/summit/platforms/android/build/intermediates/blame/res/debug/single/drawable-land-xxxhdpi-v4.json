@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/samuel/gitprojects/solaris/demo/summit/platforms/android/build/intermediates/res/merged/debug/drawable-land-xxxhdpi-v4/screen.png",
+        "source": "/Users/samuel/gitprojects/solaris/demo/summit/platforms/android/res/drawable-land-xxxhdpi/screen.png"
+    },
+    {
         "merged": "/Users/samuel/gitprojects/solaris/demo/forum16-1/platforms/android/build/intermediates/res/merged/debug/drawable-land-xxxhdpi-v4/screen.png",
         "source": "/Users/samuel/gitprojects/solaris/demo/forum16-1/platforms/android/res/drawable-land-xxxhdpi/screen.png"
     }

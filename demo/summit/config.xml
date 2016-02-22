@@ -7,7 +7,7 @@
   <author email="samuel.lui@mulesoft.com" href="http://www.mulesoft.com/">
       Samuel Lui
     </author>
-  <content src="http://192.168.31.216:8100" original-src="index.html"/>
+  <content src="index.html"/>
   <access origin="*"/>
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>

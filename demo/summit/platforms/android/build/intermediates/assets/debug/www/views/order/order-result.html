@@ -1,0 +1,20 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-dark">
+    <h1 class="title">Order Confirmation</h1>
+    <button class="button button-clear" ng-click="hideOrderResult()">Close</button>
+  </ion-header-bar>
+  <ion-content>
+    <div class="list" >
+      <div class="item" ng-show="code == 0 " >
+        Order ID     : {{orderId}}<br/>
+        <!-- Order Placed : {{message ++ '  ( ' ++ code ++ ' )'}} -->
+      </div>
+      <!-- <div class="item" ng-show="code != 0" >
+        Failed to place order : {{message ++ ' : ' ++ code}}
+      </div> -->
+      <div class="item" ng-show="code == 0" >
+        <ion-item ><img class="qrcode" ng-src="{{qrcode}}"/></ion-item>
+      </div>
+    </div>
+  </ion-content>
+</ion-modal-view>

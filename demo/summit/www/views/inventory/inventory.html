@@ -16,7 +16,7 @@
       <ion-item ng-repeat="good in goods" ui-sref="tabs.order({productCode: good.productCode, description: good.description})" >
         <div class="row">
         <!-- <div class="col-25 "><img class="photo" ng-src="{{endpoint.imgUrl ++ good.imageUrl}}"/></div> -->
-        <div class="col col-20"><img class="small-photo" ng-src="{{good.imageUrl}}"/></div>
+        <div class="col col-20"><img class="small-photo" ng-src="{{imageBase ++ good.imageUrl}}"/></div>
         <!-- <h1>image : {{good.imageUrl}}</h1> -->
         <!-- <div class="col-25 "><img class="photo" ng-src="{{getUrl(good.imageUrl)}}"/></div> -->
         <div class="col col-70 item-text-wrap myDesc">{{good.productCode}} - {{good.description}}</div>
